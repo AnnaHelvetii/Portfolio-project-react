@@ -1,16 +1,22 @@
 import "./style.css";
 
+import { NavLink } from "react-router-dom";
+
 import sun from "./../../img/icons/sun.svg";
 import moon from "./../../img/icons/moon.svg";
 
 const Navbar = () => {
+
+	const activeLink = "nav_list__link nav-list__link--active";
+	const commonLink = "nav_list__link";
+
 	return (
 		<nav className="nav">
 			<div className="container">
 				<div className="nav-row">
-					<a href="./index.html" className="logo">
+					<NavLink to="/" className="logo">
 						<strong>MY</strong>PORTFOLIO
-					</a>
+					</NavLink>
 
 					<button className="dark-mode-btn">
 						<img src={sun} alt="Light mode" className="dark-mode-btn__icon" />
@@ -19,13 +25,19 @@ const Navbar = () => {
 
 					<ul className="nav-list">
 						<li className="nav-list__item">
-							<a href="./index.html" className="nav-list__link nav-list__link--active">Home</a>
+							<NavLink to="/" className={({isActive}) => isActive ? activeLink : commonLink}>
+								Home
+							</NavLink>
 						</li>
 						<li className="nav-list__item">
-							<a href=".projects.html" className="nav-list__link">Projects</a>
+							<NavLink to="/projects" className={({isActive}) => isActive ? activeLink : commonLink}>
+								Projects
+							</NavLink>
 						</li>
 						<li className="nav-list__item">
-							<a href="./contacts.html" className="nav-list__link">Contacts</a>
+							<NavLink to="/contacts" className={({isActive}) => isActive ? activeLink : commonLink}>
+								Contacts
+							</NavLink>
 						</li>
 					</ul>
 				</div>
