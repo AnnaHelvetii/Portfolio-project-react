@@ -6,28 +6,25 @@ import project2Big from "./../img/projects/project-2-big.jpg"
 
 const projects = [
 	{
-		id: 1,
-		title: "My Project 1",
+		title: "My Project",
 		img: project1,
 		imgBig: project1Big,
 		skills: "React, Vite, Node.js, TypeScript",
 		gitHubLink: "https://github.com/AnnaHelvetii",
 	},
 	{
-		id: 2,
-		title: "My Project 2",
+		title: "My Project project",
 		img: project2,
 		imgBig: project2Big,
 		skills: "React, MongoDB, TypeScript",
 		gitHubLink: "https://github.com/AnnaHelvetii",
 	},
 	{
-		id: 3,
-		title: "My Project 3",
+		title: "My Project project project",
 		img: project1,
 		imgBig: project1Big,		
 		skills: "React, Vite, Node.js, TypeScript",
 	},
-]
+];
 
 export {projects}
