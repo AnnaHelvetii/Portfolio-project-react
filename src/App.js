@@ -15,7 +15,7 @@ function App() {
 	return (
 		<div className="App">
 			<Router>
-				<ScrollToTop/>
+				<ScrollToTop />
 				<Navbar />
 
 				<Routes> 

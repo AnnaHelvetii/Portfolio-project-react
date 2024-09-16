@@ -41,11 +41,13 @@
 
 .nav-list__link {
 	color: var(--white);
-	transition: opacity 0.2s ease-in;
+	transition: opacity 0.2s ease-in, font-size 0.3s ease-out;
 }
 
 .nav-list__link:hover {
 	opacity: 0.8;
+	font-size: 18px;
+	background-color: var(--accent);
 }
 
 .nav-list__link--active {
