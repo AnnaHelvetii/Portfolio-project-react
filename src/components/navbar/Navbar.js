@@ -4,8 +4,8 @@ import "./style.css";
 
 const Navbar = () => {
 
-	const activeLink = "nav_list__link nav-list__link--active";
-	const commonLink = "nav_list__link";
+	const activeLink = "nav-list__link nav-list__link--active";
+	const commonLink = "nav-list__link";
 
 	return (
 		<nav className="nav">
