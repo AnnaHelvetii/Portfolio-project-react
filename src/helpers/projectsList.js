@@ -1,29 +1,27 @@
-import project1 from "./../img/projects/project-1.jpg";
-import project1Big from "./../img/projects/project-1-big.jpg";
-
-import project2 from "./../img/projects/project-2.jpg"
-import project2Big from "./../img/projects/project-2-big.jpg"
+import project1 from "./../img/projects/project__daily-notes.png";
+import projectInProgress from "./../img/projects/project__in-progress.png";
 
 const projects = [
 	{
-		title: "My Project",
+		title: "Daily notes",
 		img: project1,
-		imgBig: project1Big,
-		skills: "React, Vite, Node.js, TypeScript",
+		imgBig: project1,
+		skills: "React, TypeScript",
+		gitHubLink: "https://github.com/AnnaHelvetii/todo-app_react-ts",
+	},
+	{
+		title: "In progress",
+		img: projectInProgress,
+		imgBig: projectInProgress,
+		skills: "...coming soon",
 		gitHubLink: "https://github.com/AnnaHelvetii",
 	},
 	{
-		title: "My Project project",
-		img: project2,
-		imgBig: project2Big,
-		skills: "React, MongoDB, TypeScript",
-		gitHubLink: "https://github.com/AnnaHelvetii",
-	},
-	{
-		title: "My Project project project",
-		img: project1,
-		imgBig: project1Big,		
-		skills: "React, Vite, Node.js, TypeScript",
+		title: "In progress",
+		img: projectInProgress,
+		imgBig: projectInProgress,		
+		skills: "...coming soon",
+		gitHubLink: "https://github.com/AnnaHelvetii"
 	},
 ];
 

@@ -1,37 +1,30 @@
 /* Header */
 
 .header {
+	height: 100vh;
+	padding: 70px 0;
 	min-height: 695px;
-	padding: 40px 0;
-
 	display: flex;
 	justify-content: center;
-	align-items: center;
-
-	background-color: var(--dark-bg);
-	background-image: url('./../../img/header-bg.png');
-	background-repeat: no-repeat;
-	background-size: auto;
-	background-position: center center;
-
+	align-items: flex-start;
+	background: #abbaab;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: var(--header-text);
 	text-align: center;
 }
 
 .header__wrapper {
 	padding: 0 15px;
-	max-width: 660px;
-}
-.header__title {
-	margin-bottom: 20px;
-	font-size: 40px;
-	font-weight: 700;
-	line-height: 1.4;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
 }
 
-.header__title strong {
-	font-size: 60px;
-	font-weight: 700;
+.header__title {
+	font-size: 4rem;	
 }
 
 .header__title em {
@@ -40,7 +33,7 @@
 }
 
 .header__text {
-	margin-bottom: 40px;
+	font-family: "Poiret One", sans-serif;
 	font-size: 18px;
 	line-height: 1.333;
 }

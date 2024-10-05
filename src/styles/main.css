@@ -1,18 +1,20 @@
 @import "./reset.css";
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 :root {
 	--black: #171718;
 	--totalblack: #000;
 	--black-border: #26292d;
 	--white: #fff;
-	--orange: orange;
+	--orange: #d28e04;
 
 	--text-color: var(--black);
 	--dark-bg: var(--black);
 	--dark-border: var(--black-border);
-	--header-text: var(--white);
+	--header-text: var(--black);
 	--accent: var(--orange);
 
 	/* Light mode */
@@ -43,19 +45,13 @@
 }
 
 html, body {
-	min-height: 100vh;
-
-	font-family: "DM Sans", sans-serif; 
-	letter-spacing: -0.5px;
+	font-family: "Yeseva One", serif;
+	font-size: 16px;
 
 	/* Light mode */
 
 	background-color: var(--page-bg);
 	color: var(--text-color);
-}
-
-#root {
-	min-height: 100vh;
 }
 
 .App {
@@ -82,18 +78,15 @@ html, body {
 
 .title-1 {
 	margin-bottom: 60px;
-
-	font-size: 60px;
+	font-size: 3rem;
 	font-weight: 700;
-	line-height: 1.3;
 	color: var(--title-1);
 	text-align: center;
 }
 
 .title-2 {
 	margin-bottom: 20px;	
-
-	font-size: 40px;
+	font-size: 2rem;
 	font-weight: 700;
 	line-height: 1.3;
 	color: var(--text-color);
@@ -102,25 +95,29 @@ html, body {
 /* Button */
 
 .btn {
+	width: 33%;
 	display: inline-block;
-	height: 48px;
-	padding: 12px 28px;
-
+	padding: 0.8em 1em;
 	border-radius: 5px;
 	background-color: var(--accent);
 	color: var(--white);
-	letter-spacing: 0.15px;
-	font-size: 16px;
-	font-weight: 500;
+	font-family: "Poiret One", sans-serif;
+	line-height: 1.5;
+	font-size: 1rem;
 	transition: opacity 0.2s ease-in, transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
 }
 
 .btn:hover {
 	opacity: 0.8;
 	transform: scale(110%);
-	color: var(--accent);
-	background-color: var(--white);
+	color: var(--white);
+	background-color: var(--black);
 	cursor: pointer;
+}
+
+.btn img {
+	margin-left: 0.8em;
+	height: 1.5em;
 }
 
 .btn:active {
@@ -157,12 +154,12 @@ html, body {
 
 /* Projects */
 
+
 .projects {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	column-gap: 30px;
-	row-gap: 30px;
+	gap: 30px;
 }
 
 /* Project details */
@@ -214,6 +211,10 @@ html, body {
 	line-height: 1.5;
 }
 
+.content-list__item p {
+	font-family: "Poiret One", sans-serif;
+}
+
 .content-list__item p + p {
 	margin-top: 0.5em;
 }
@@ -226,12 +227,8 @@ html, body {
 		min-height: unset;
 	}
 
-	.header__title {
-		font-size: 30px;
-	}
-
 	.header__title strong {
-		font-size: 40px;
+		font-size: 3rem;
 	}
 
 	/* Nav */
