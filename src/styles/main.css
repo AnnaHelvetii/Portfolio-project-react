@@ -1,6 +1,4 @@
 @import "./reset.css";
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
@@ -11,65 +9,62 @@
 	--white: #fff;
 	--orange: #d28e04;
 
-	--text-color: var(--black);
 	--dark-bg: var(--black);
-	--dark-border: var(--black-border);
-	--header-text: var(--black);
 	--accent: var(--orange);
 
 	/* Light mode */
 
-	--page-bg: var(--white);
+	--page-bg: linear-gradient(to right, #ffffff, #bab5ab);
+	--border: var(--black-border);
 	--text-color: var(--black);
-
 	--title-1: var(--accent);
-
 	--project-card-bg: var(--white);
 	--project-card-text: var(--black);
-
-	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
 }
 
 .dark {
 	/* Dark mode */
 
-	--page-bg: #252526;
+	--page-bg: linear-gradient(to bottom, #5c5c5ca0 0%, #565656ae 40%, #1C1C1C 150%);
 	--text-color: var(--white);
-
 	--title-1: var(--white);
-
+	--border: var(--white);
 	--project-card-bg: var(--black);
 	--project-card-text: var(--white);
-
-	--box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.8);
 }
 
 html, body {
 	font-family: "Yeseva One", serif;
 	font-size: 16px;
-
-	/* Light mode */
-
-	background-color: var(--page-bg);
 	color: var(--text-color);
+	background: var(--page-bg);
 }
 
 .App {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
 
 /* General */
 
-.container {
-	margin: 0 auto;
-	max-width: 1200px;
-	padding: 0 15px;
+.section {
+	margin: 30px;
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	flex-grow: 1;
 }
 
-.section {
-	padding: 70px 0;
+.container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+	padding: 0 15px;
 }
 
 .none {
@@ -77,17 +72,13 @@ html, body {
 }
 
 .title-1 {
-	margin-bottom: 60px;
 	font-size: 3rem;
-	font-weight: 700;
 	color: var(--title-1);
 	text-align: center;
 }
 
 .title-2 {
-	margin-bottom: 20px;	
 	font-size: 2rem;
-	font-weight: 700;
 	line-height: 1.3;
 	color: var(--text-color);
 }
@@ -128,19 +119,18 @@ html, body {
 /* Button outline */
 
 .btn-outline {
-	display: flex;
-	column-gap: 10px;
-	align-items: center;
-
-	padding: 12px 20px;
 	height: 48px;
+	padding: 12px 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
 	border-radius: 5px;
-
-	border: 1px solid var(--totalblack);
+	border: 0.5px solid var(--border);
 	background-color: var(--white);
-	color: var(--totalblack) ;
-
-	transition: opacity 0.2s ease-in
+	color: var(--totalblack);
+	font-family: "Poiret One", sans-serif;
+	font-size: 1rem;
+	transition: opacity 0.2s ease-in;
 }
 
 .btn-outline:hover {
@@ -154,7 +144,6 @@ html, body {
 
 /* Projects */
 
-
 .projects {
 	display: flex;
 	justify-content: center;
@@ -165,57 +154,58 @@ html, body {
 /* Project details */
 
 .project-details {
-	margin: 0 auto;
-	max-width: 865px;
-
+	max-width: 600px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	gap: 30px;
 }
 
 .project-details__cover {
 	max-width: 100%;
-	margin-bottom: 40px;
-
-	box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
+	border: 0.5px solid var(--border);
 }
 
 .project-details__desc {
-	margin-bottom: 30px;
+	font-family: "Poiret One", sans-serif;
+	font-size: 1em;
+}
 
-	font-size: 24px;
-	font-weight: 700;
+.project-details__skills {
+	font-size: 1em;
 	line-height: 1.3;
 }
 
-/* Content list */
+/* Contacts */
 
-.content-list {
+.contacts-list {
 	margin: 0 auto;
-	max-width: 570px;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	row-gap: 40px;
+	gap: 40px;
 }
 
-.content-list a {
+.contacts-list a {
 	color: var(--accent);
 }
 
-.content-list__item {
-	font-size: 18px;
-	line-height: 1.5;
+.contacts-list__item {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 0.5em;
+	font-size: 1em;
 }
 
-.content-list__item p {
+.contacts-list__item p {
 	font-family: "Poiret One", sans-serif;
 }
 
-.content-list__item p + p {
+.contacts-list__item p + p {
 	margin-top: 0.5em;
 }
 
@@ -223,8 +213,9 @@ html, body {
 
 	/* Header */
 
-	.header {
-		min-height: unset;
+	.header .header__wrapper {
+		padding: 30px;
+		gap: 30px;
 	}
 
 	.header__title strong {
@@ -234,39 +225,36 @@ html, body {
 	/* Nav */
 
 	.nav-row {
-		justify-content: space-between;
-	}
-
-	.dark-mode-btn {
-		order: 0;
+		gap: 20px;
 	}
 
 	/* General */
 
 	.section {
-		padding: 40px 0;
+		padding: 30px 0;
+	}
+
+	.container {
+		gap: 40px;
 	}
 
 	.title-1 {
-		margin-bottom: 30px;
 		font-size: 40px;
 	}
 
 	.title-2 {
-		margin-bottom: 10px;
 		font-size: 30px;
 	}
 
 	/* Projects */
 
-	.project__title {
-		font-size: 22px;
+	.project .project__title {
+		font-size: 20px;
 	}
 
 	/* Project page */
 
 	.project-details__desc {
-		margin-bottom: 20px;
 		font-size: 20px;
 	}
 
@@ -274,10 +262,6 @@ html, body {
 
 	.content-list {
 		row-gap: 20px;
-	}
-
-	.content-list__item {
-		font-size: 16px;
 	}
 
 	/* Footer */
@@ -292,11 +276,7 @@ html, body {
 
 	/* Social */
 
-	.social {
-		row-gap: 20px;
-	}
-
 	.social__item {
-		width: 28px;
+		width: 22px;
 	}
 }

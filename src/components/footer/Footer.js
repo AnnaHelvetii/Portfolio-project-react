@@ -1,4 +1,4 @@
-import "./style.css"
+import "./footer.css"
 
 import vk from "./../../img/icons/vk.svg";
 import linkedIn from "./../../img/icons/linkedIn.svg";

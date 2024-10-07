@@ -2,10 +2,10 @@
 	max-width: 370px;
 	display: flex;
 	flex-flow: column nowrap;
-	flex: 1 1 30%;
-	border: 0.5px solid var(--black);
+	border: 0.5px solid var(--border);
 	border-radius: 10px;
 	overflow: hidden;
+	background-color: var(--project-card-bg);
 }
 
 .img__project {
