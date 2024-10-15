@@ -44,7 +44,6 @@ html, body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
 }
 
 /* General */
@@ -55,7 +54,7 @@ html, body {
 	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
-	flex-grow: 1;
+	flex: 1;
 }
 
 .container {
@@ -130,11 +129,14 @@ html, body {
 	color: var(--totalblack);
 	font-family: "Poiret One", sans-serif;
 	font-size: 1rem;
-	transition: opacity 0.2s ease-in;
+	transition: opacity 0.2s ease-in, transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
 }
 
 .btn-outline:hover {
 	opacity: 0.8;
+	transform: scale(110%);
+	background-color: var(--accent);
+	cursor: pointer;
 }
 
 .btn-outline:active {
