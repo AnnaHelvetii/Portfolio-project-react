@@ -8,11 +8,11 @@ const Header = () => {
 				<div className="section__greetings-button">
 					<h1 className="header__title">
 						<strong>
-							I'm <em>Anna</em>. Web developer
+							I'm <em>Anna</em>. Web developerTEST
 						</strong>
 					</h1>
 					<div className="header__text">
-						<p>There are some my works</p>
+						<p>There are some my works!</p>
 					</div>
 					<a 
 						href="https://github.com/AnnaHelvetii" 

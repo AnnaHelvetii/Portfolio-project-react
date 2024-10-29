@@ -1,0 +1,35 @@
+name: Update my site
+
+on:
+  push:
+    branches:
+      - main  
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '16.20.2' 
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build project
+      run: npm run build
+
+    - name: Init changes
+      env:
+        SSH_KEY: ${{ secrets.SSH_KEY }}
+      run: |
+        echo "$SSH_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'rm -rf /var/www/soboleva-anna.ru/*'
+        scp -r ./build/* nginx@soboleva-anna.ru:/var/www/soboleva-anna.ru/
+        ssh nginx@soboleva-anna.ru 'sudo systemctl restart nginx'
