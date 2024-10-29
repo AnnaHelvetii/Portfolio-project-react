@@ -33,4 +33,4 @@ jobs:
         chmod 600 ~/.ssh/id_rsa
         ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'rm -rf /var/www/soboleva-anna.ru/*'
         scp -r ./build/* nginx@soboleva-anna.ru:/var/www/soboleva-anna.ru/
-        ssh nginx@soboleva-anna.ru 'sudo systemctl restart nginx'
+        ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'sudo systemctl restart nginx'
