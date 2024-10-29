@@ -31,6 +31,6 @@ jobs:
         mkdir -p ~/.ssh
         echo "$SSH_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'rm -rf /var/www/soboleva-anna.ru/*'
+        ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'chown -R nginx:nginx /var/www/soboleba-anna.ru && rm -rf /var/www/soboleva-anna.ru/*'
         scp -r ./build/* nginx@soboleva-anna.ru:/var/www/soboleva-anna.ru/
         ssh -o StrictHostKeyChecking=no nginx@soboleva-anna.ru 'sudo systemctl restart nginx'
