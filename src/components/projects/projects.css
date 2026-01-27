@@ -1,0 +1,16 @@
+.section {
+	margin: 0;
+}
+
+.projects {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+@media (max-width: 620px) {
+	.project .project__title {
+		font-size: 20px;
+	}
+}

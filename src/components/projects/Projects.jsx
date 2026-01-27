@@ -1,6 +1,6 @@
-import Project from "../components/project/Project";
-
-import { projects } from "../helpers/projectsList";
+import './projects.css';
+import Project from '../project/Project';
+import { projects } from '../../helpers/projectsList';
 
 const Projects = () => {
 	return (

@@ -5,7 +5,7 @@ const detectDarkMode = () => {
 	) {
 		return 'dark'
 	}
-	return 'light'	
+	return 'light'
 };
 
 export default detectDarkMode;

@@ -1,6 +1,8 @@
+import "./contacts.css"
+
 const Contacts = () => {
 	return (
-		<main className="section">		
+		<main className="section">
 			<div className="container">
 				<h1 className="title-1">Contacts</h1>
 				<ul className="contacts-list">

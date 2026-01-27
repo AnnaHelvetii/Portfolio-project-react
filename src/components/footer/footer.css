@@ -1,7 +1,13 @@
 .footer {
+	position: absolute;
+    width: 100%;
+    bottom: 0;
 	padding: 1em 0 1em;
-	background-color: var(--dark-bg);
-	color: var(--white);
+	color: var(--text-color);
+}
+
+.container {
+	padding: 0;
 }
 
 .footer__wrapper {
@@ -13,7 +19,7 @@
 
 .social {
 	display: flex;
-	gap: 20px;
+	gap: 1rem;
 	align-items: center;
 }
 

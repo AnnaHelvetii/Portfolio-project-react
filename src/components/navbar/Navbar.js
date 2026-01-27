@@ -1,5 +1,4 @@
-import { NavLink } from "react-router-dom";
-import BtnDarkMode from "../btnDarkMode/BtnDarkMode";
+import BtnDarkMode from "../btnDarkMode/BtnDarkMode.js";
 import "./nav.css";
 
 const Navbar = () => {
@@ -13,19 +12,13 @@ const Navbar = () => {
 				<div className="nav-row">
 					<ul className="nav-list">
 						<li className="nav-list__item">
-							<NavLink to="/" className={({isActive}) => isActive ? activeLink : commonLink}>
-								Home
-							</NavLink>
+							Home
 						</li>
 						<li className="nav-list__item">
-							<NavLink to="/projects" className={({isActive}) => isActive ? activeLink : commonLink}>
-								Projects
-							</NavLink>
+							Projects
 						</li>
 						<li className="nav-list__item">
-							<NavLink to="/contacts" className={({isActive}) => isActive ? activeLink : commonLink}>
-								Contacts
-							</NavLink>
+							Contacts
 						</li>
 					</ul>
 					<BtnDarkMode />

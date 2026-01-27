@@ -1,16 +1,38 @@
 @import "./reset.css";
+@import "./button.css";
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@font-face {
+    font-family: 'Satoshi Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Satoshi Regular'), url(/src/fonts/Satoshi-Regular.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Satoshi Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Satoshi Light'), url(/src/fonts/Satoshi-Light.woff) format('woff');
+}
+
+@font-face {
+    font-family: 'Satoshi Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Satoshi Bold'), url(/src/fonts/Satoshi-Bold.woff) format('woff');
+}
 
 :root {
 	--black: #171718;
-	--totalblack: #000;
+	--total-black: #000;
 	--black-border: #26292d;
 	--white: #fff;
-	--orange: #d28e04;
-
+	--dark-red: #972626f1;
 	--dark-bg: var(--black);
-	--accent: var(--orange);
+	--accent: var(--dark-red);
 
 	/* Light mode */
 
@@ -20,41 +42,82 @@
 	--title-1: var(--accent);
 	--project-card-bg: var(--white);
 	--project-card-text: var(--black);
+		--btn-gradient: linear-gradient(
+		120deg,
+		hsla(0, 0%, 100%, .5),
+		#972626f1,	
+		#806c6cf1,
+		#944e4ef1, 
+		hsla(0, 0%, 100%, 0.302));
+	--btn-text-color: var(--accent);
 }
 
 .dark {
-	/* Dark mode */
-
-	--page-bg: linear-gradient(to bottom, #5c5c5ca0 0%, #565656ae 40%, #1C1C1C 150%);
+	--page-bg: linear-gradient(to bottom, #111111 0%, #1d1313f1 40%, #1C1C1C 150%);
 	--text-color: var(--white);
 	--title-1: var(--white);
 	--border: var(--white);
 	--project-card-bg: var(--black);
 	--project-card-text: var(--white);
+	--btn-gradient: linear-gradient(
+		120deg,
+		hsla(0, 0%, 100%, .5), 
+		hsla(0, 0%, 100%, .1), 
+		#fff, 
+		hsla(0, 0%, 100%, .3));
+	--btn-text-color: var(--white);
 }
 
 html, body {
-	font-family: "Yeseva One", serif;
+	font-family: 'Satoshi Regular', sans-serif;
 	font-size: 16px;
 	color: var(--text-color);
 	background: var(--page-bg);
 }
 
 .App {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
+	position: relative;
+	overflow: hidden;
+}
+
+#background__noisy {
+    pointer-events: none;
+    background-blend-mode: normal;
+    background-image: url('/src/img/background_noisy.webp');
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    height: 100vh;
+    width: 100vw;
+	opacity: 0.8;
+}
+
+.gradient-experience__1 {
+    will-change: transform;
+    background-image: linear-gradient(180deg,#383838,#972626f1);
+	position: absolute;
+    z-index: 0;
+    bottom: 0;
+    height: 500px;
+    width: 900px;
+    filter: blur(11.5rem);
+    opacity: 0.9;
+    border-radius: 900px;
 }
 
 /* General */
+
+main.section {
+	height: 100vh;
+}
 
 .section {
 	margin: 30px;
 	display: flex;
 	flex-flow: column nowrap;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
-	flex: 1;
 }
 
 .container {
@@ -71,151 +134,26 @@ html, body {
 }
 
 .title-1 {
-	font-size: 3rem;
-	color: var(--title-1);
-	text-align: center;
+    color: #494646;
+    font-family: 'Satoshi Bold', sans-serif;
+    font-size: 23px;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
 }
 
 .title-2 {
-	font-size: 2rem;
-	line-height: 1.3;
-	color: var(--text-color);
-}
-
-/* Button */
-
-.btn {
-	width: 33%;
-	display: inline-block;
-	padding: 0.8em 1em;
-	border-radius: 5px;
-	background-color: var(--accent);
-	color: var(--white);
-	font-family: "Poiret One", sans-serif;
-	line-height: 1.5;
-	font-size: 1rem;
-	transition: opacity 0.2s ease-in, transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
-}
-
-.btn:hover {
-	opacity: 0.8;
-	transform: scale(110%);
-	color: var(--white);
-	background-color: var(--black);
-	cursor: pointer;
-}
-
-.btn img {
-	margin-left: 0.8em;
-	height: 1.5em;
-}
-
-.btn:active {
-	position: relative;
-	top: 1px;
-}
-
-/* Button outline */
-
-.btn-outline {
-	height: 48px;
-	padding: 12px 20px;
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	border-radius: 5px;
-	border: 0.5px solid var(--border);
-	background-color: var(--white);
-	color: var(--totalblack);
-	font-family: "Poiret One", sans-serif;
-	font-size: 1rem;
-	transition: opacity 0.2s ease-in, transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
-}
-
-.btn-outline:hover {
-	opacity: 0.8;
-	transform: scale(110%);
-	background-color: var(--accent);
-	cursor: pointer;
-}
-
-.btn-outline:active {
-	position: relative;
-	top: 1px;
-}
-
-/* Projects */
-
-.projects {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	gap: 30px;
-}
-
-/* Project details */
-
-.project-details {
-	max-width: 600px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	gap: 30px;
-}
-
-.project-details__cover {
-	max-width: 100%;
-	border-radius: 10px;
-	border: 0.5px solid var(--border);
-}
-
-.project-details__desc {
-	font-family: "Poiret One", sans-serif;
-	font-size: 1em;
-}
-
-.project-details__skills {
-	font-size: 1em;
-	line-height: 1.3;
-}
-
-/* Contacts */
-
-.contacts-list {
-	margin: 0 auto;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	text-align: center;
-	gap: 40px;
-}
-
-.contacts-list a {
-	color: var(--accent);
-}
-
-.contacts-list__item {
-	display: flex;
-	flex-flow: column nowrap;
-	gap: 0.5em;
-	font-size: 1em;
-}
-
-.contacts-list__item p {
-	font-family: "Poiret One", sans-serif;
-}
-
-.contacts-list__item p + p {
-	margin-top: 0.5em;
+    color: #494646;
+    font-family: 'Satoshi Light', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
 }
 
 @media (max-width: 620px) {
 
 	/* Header */
 
-	.header .header__wrapper {
+	.header .main__wrapper {
 		padding: 30px;
 		gap: 30px;
 	}
@@ -246,18 +184,6 @@ html, body {
 
 	.title-2 {
 		font-size: 30px;
-	}
-
-	/* Projects */
-
-	.project .project__title {
-		font-size: 20px;
-	}
-
-	/* Project page */
-
-	.project-details__desc {
-		font-size: 20px;
 	}
 
 	/* Content list */
