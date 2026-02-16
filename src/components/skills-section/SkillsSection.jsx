@@ -3,11 +3,12 @@ import skills from '../../helpers/skillsList';
 import { skillsIcons } from '../../helpers/skillsIcons';
 import { useTheme } from '../../utils/ThemeContext';
 
-const SkillsSection = () => {
+const SkillsSection = ({ id }) => {
 	const { theme } = useTheme();
 
 	return (
-		<main className="section">
+		<section className="section" id={id} >
+			<div className="gradient-default gradient-skills__1"></div>
 			<div className="container">
 				<h2 className="title-1">Skills</h2>
 				<ul className="skills__list">
@@ -22,7 +23,7 @@ const SkillsSection = () => {
 					))}
 				</ul>
 			</div>
-		</main>
+		</section>
 	);
 }
 

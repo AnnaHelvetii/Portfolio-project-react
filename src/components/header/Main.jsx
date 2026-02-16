@@ -1,40 +1,22 @@
 import "./main-page.css";
-import { projects } from "../../helpers/projectsList";
+import projects from "../../helpers/projectsList";
 import Project from "../project/Project";
-import { useTheme } from "../../utils/ThemeContext";
-import { socialIcons } from "../../helpers/socialsList";
-import socialsList from "../../helpers/socialsList";
+import SocialIconsBlock from "../social-icons/SocialIconsBlock";
+import BtnGitHub from "../btnGitHub/BtnGitHub";
 
-const Main = () => {
-	const { theme } = useTheme();
-	const gitHubWhite = "/img/socials-icons/dark/github.svg";
-	const gitHubBlack = "/img/socials-icons/light/github.svg";
-	const gitHubIconSrc = theme === 'dark' ? gitHubWhite : gitHubBlack;
-
+const Main = ({ id }) => {
 	return (
-		<main className="main">
+		<main className="main" id={id} >
 			<div className="main__wrapper">
 				<div className="section__greetings">
-					<a 
-						href="https://github.com/AnnaHelvetii" 
-						target="_blank" 
-						rel="noreferrer" 
-						className="btn btn-github">
-							View GitHub profile
-						<img src={gitHubIconSrc} alt="" />
-					</a>
+					<BtnGitHub 
+						innerText='View GitHub profile'
+						link='https://github.com/AnnaHelvetii'
+					/>
 					<h1 className="header__title">
-						<strong>I'm <em>Anna</em>.<br/>Web developer</strong>
+						I'm <em>Anna</em>.<br/>Web developer
 					</h1>
-					<ul className="social">
-						{socialsList.map(social => (
-							<li className="social__item btn btn-social" key={social.id}>
-								<a href={social.href} target="_blank" rel="noreferrer">
-									<img src={socialIcons[theme][social.icon]} alt="link" />
-								</a>
-							</li>
-						))}
-					</ul>
+					<SocialIconsBlock />
 				</div>
 				<div className="projects-preview">
 					<ul className="projects-preview__list">
@@ -44,9 +26,12 @@ const Main = () => {
 								className={`projects-preview__item projects-preview__item--${index}`}
 							>
 								<Project 
-									title={project.title} 
-									img={project.img} 
-									index={index}
+									title={project.title}
+									description={project.description}
+									skills={project.skills}
+									gitHubLink={project.gitHubLink}
+									projectLink={project.projectLink}
+									year={project.year}
 								/>
 							</li>
 						))}

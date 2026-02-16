@@ -1,34 +1,30 @@
-/* .btn {
+.btn {
 	position: relative;
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 	padding: 0.5rem 1rem;
 	gap: 0.5rem;
-	background-color: transparent;
+	background-color: var(--btn-bg);
 	color: var(--btn-text-color);
-	font-family: "Inter", sans-serif;
 	font-size: 1rem;
 	overflow: hidden;
-	transition: opacity 0.2s ease-in,
-		transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
+	transition: opacity 0.2s ease-in, transform 0.4s cubic-bezier(0.52, 0, 0.27, 2);
+	touch-action: manipulation;
+	user-select: none;
+	-webkit-user-select: none;
 }
 
 .btn-github {
 	border-radius: 1.5rem;
 	width: fit-content;
-} */
-
-.btn-social {
-	border-radius: 1rem;
-	border: 1px solid var(--border);
 }
 
-/* .btn-github::before {
+.btn-github::before {
 	content: "";
 	position: absolute;
 	inset: 0;
-	padding: 1.5px;
+	padding: 1px;
 	border-radius: inherit;
 	background: var(--btn-gradient);
 	background-size: 300% 300%;
@@ -58,4 +54,4 @@
 .btn:active {
 	position: relative;
 	top: 1px;
-} */
+}

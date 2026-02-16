@@ -1,8 +1,8 @@
 import "./contacts.css"
 
-const Contacts = () => {
+const Contacts = ({ id }) => {
 	return (
-		<main className="section">
+		<section className="section" id={id}>
 			<div className="container">
 				<h1 className="title-1">Contacts</h1>
 				<ul className="contacts-list">
@@ -11,7 +11,7 @@ const Contacts = () => {
 						<p>Saint-Petersburg, Russia</p>			
 					</li>
 					<li className="contacts-list__item">
-						<h2 className="title-2">Telegram / WhatsApp</h2>
+						<h2 className="title-2">Telegram</h2>
 						<p><a href="tel:+79211819369">+7 (921) 181-93-69</a></p>
 					</li>
 					<li className="contacts-list__item">
@@ -20,7 +20,7 @@ const Contacts = () => {
 					</li>
 				</ul>
 			</div>
-		</main>
+		</section>
 	);
 }
 

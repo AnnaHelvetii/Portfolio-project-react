@@ -1,7 +1,5 @@
 @import "./reset.css";
 @import "./button.css";
-@import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @font-face {
@@ -28,21 +26,28 @@
 :root {
 	--black: #171718;
 	--total-black: #000;
-	--black-border: #26292d;
+	--gray: #9b9b9b;
+	--dark-gray: #494646;
 	--white: #fff;
 	--dark-red: #972626f1;
+	--black-border: #26292d;
+	--light-border: var(--gray);
+	--gray-text: var(--gray);
 	--dark-bg: var(--black);
 	--accent: var(--dark-red);
+	--marquee-bg: #333333b0;
+	--btn-bg: #ffffff1c;
 
 	/* Light mode */
 
 	--page-bg: linear-gradient(to right, #ffffff, #bab5ab);
 	--border: var(--black-border);
 	--text-color: var(--black);
+	--gray-text: var(--dark-gray);
 	--title-1: var(--accent);
-	--project-card-bg: var(--white);
+	--project-card-bg: #00000010;
 	--project-card-text: var(--black);
-		--btn-gradient: linear-gradient(
+	--btn-gradient: linear-gradient(
 		120deg,
 		hsla(0, 0%, 100%, .5),
 		#972626f1,	
@@ -50,14 +55,16 @@
 		#944e4ef1, 
 		hsla(0, 0%, 100%, 0.302));
 	--btn-text-color: var(--accent);
+	--gradient-background: linear-gradient(210deg, #b5b5b5, #b93737f1);
 }
 
 .dark {
 	--page-bg: linear-gradient(to bottom, #111111 0%, #1d1313f1 40%, #1C1C1C 150%);
 	--text-color: var(--white);
+	--gray-text: var(--gray);
 	--title-1: var(--white);
-	--border: var(--white);
-	--project-card-bg: var(--black);
+	--border: var(--light-border);
+	--project-card-bg: #ffffff10;
 	--project-card-text: var(--white);
 	--btn-gradient: linear-gradient(
 		120deg,
@@ -66,6 +73,7 @@
 		#fff, 
 		hsla(0, 0%, 100%, .3));
 	--btn-text-color: var(--white);
+	--gradient-background: linear-gradient(180deg,#383838,#972626f1);
 }
 
 html, body {
@@ -93,11 +101,14 @@ html, body {
 	opacity: 0.8;
 }
 
-.gradient-experience__1 {
+.gradient-default {
     will-change: transform;
-    background-image: linear-gradient(180deg,#383838,#972626f1);
+    background-image: var(--gradient-background);
 	position: absolute;
     z-index: 0;
+}
+
+.gradient-main {
     bottom: 0;
     height: 500px;
     width: 900px;
@@ -108,16 +119,18 @@ html, body {
 
 /* General */
 
-main.section {
-	height: 100vh;
+main.section,
+section.section {
+	height: 100%;
 }
 
 .section {
-	margin: 30px;
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
-	align-items: center;
+    margin: 0 4vw;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 14vh 0 8vh;
 }
 
 .container {
@@ -134,77 +147,62 @@ main.section {
 }
 
 .title-1 {
-    color: #494646;
+    color: var(--gray-text);
     font-family: 'Satoshi Bold', sans-serif;
-    font-size: 23px;
+    font-size: 1.5rem;
     letter-spacing: 0.015em;
     text-transform: uppercase;
 }
 
 .title-2 {
-    color: #494646;
+    color: var(--gray-text);
     font-family: 'Satoshi Light', sans-serif;
     font-size: 18px;
     letter-spacing: 0.015em;
     text-transform: uppercase;
 }
 
+@media (max-width: 900px) {
+	.section {
+		margin-bottom: 4rem;
+	}
+}
+
 @media (max-width: 620px) {
-
-	/* Header */
-
-	.header .main__wrapper {
-		padding: 30px;
-		gap: 30px;
+	.gradient-experience__1 {
+		will-change: transform;
+		background-image: linear-gradient(180deg,#383838,#972626f1);
+		position: absolute;
+		z-index: 0;
+		bottom: -170px;
+		height: 700px;
+		width: 900px;
+		filter: blur(7.5rem);
+		opacity: 1;
+		border-radius: 500px;
+		left: -100px;
 	}
-
-	.header__title strong {
-		font-size: 3rem;
-	}
-
-	/* Nav */
-
-	.nav-row {
-		gap: 20px;
-	}
-
-	/* General */
 
 	.section {
 		padding: 30px 0;
+		margin: 2vw 0;
 	}
 
 	.container {
 		gap: 40px;
 	}
 
-	.title-1 {
-		font-size: 40px;
-	}
-
 	.title-2 {
-		font-size: 30px;
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 430px) {
+	.title-2 {
+		font-size: 1rem;
 	}
 
-	/* Content list */
-
-	.content-list {
-		row-gap: 20px;
-	}
-
-	/* Footer */
-
-	.footer {
-		padding: 40px 0 30px;
-	}
-
-	.footer__wrapper {
-		row-gap: 20px;
-	}
-
-	/* Social */
-
-	.social__item {
-		width: 22px;
+	.container {
+		gap: 24px;
 	}
 }

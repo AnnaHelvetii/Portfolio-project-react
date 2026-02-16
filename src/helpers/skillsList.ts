@@ -26,4 +26,10 @@ const skills: Skills[] = [
 	{ id: 'figma', title: 'Figma', icon: 'figma' }
 ];
 
+export type SkillId = typeof skills[number]['id'];
+
+export const skillsMap = Object.fromEntries(
+	skills.map(skill => [skill.id, skill])
+);
+
 export default skills;

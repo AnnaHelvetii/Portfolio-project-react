@@ -1,27 +1,24 @@
 import "./footer.css"
-import socialsList from "../../helpers/socialsList";
-import { useTheme } from "../../utils/ThemeContext";
-import { socialIcons } from "../../helpers/socialsList";
+import SocialIconsBlock from "../social-icons/SocialIconsBlock";
+import BtnGitHub from "../btnGitHub/BtnGitHub";
+import { useMediaQuery } from "../../utils/useMediaQuery";
 
 const Footer = () => {
-	const { theme } = useTheme();
+	const year = new Date().getFullYear();
+	const isMobile = useMediaQuery("(max-width: 620px)");
 
 	return (
 		<footer className="footer">
 			<div className="container">
 				<div className="footer__wrapper">
-					<ul className="social">
-						{socialsList.map(social => (
-							<li className="social__item" key={social.id}>
-								<a href={social.href} target="_blank" rel="noreferrer">
-									<img src={socialIcons[theme][social.icon]} alt={social.title} />
-								</a>
-							</li>
-						))}
-					</ul>
 					<div className="copyright">
-						<p>© 2026 soboleva-anna.ru</p>
+						<p>{`© ${year} soboleva-anna.ru`}</p>
 					</div>
+					{isMobile ? (
+						<BtnGitHub link='https://t.me/anna_helvetii' innerText="Contact me" showIcon={false} />
+					) : (
+						<SocialIconsBlock /> 
+					)}
 				</div>
 			</div>
 		</footer>

@@ -1,26 +1,30 @@
 import './projects.css';
 import Project from '../project/Project';
-import { projects } from '../../helpers/projectsList';
+import projects
+from '../../helpers/projectsList';
 
-const Projects = () => {
+const Projects = ({ id }) => {
 	return (
-		<main className="section">
+		<section className="section projects-section" id={id} >
+			<div className="gradient-default gradient-projects__1"></div>
 			<div className="container">
 				<h2 className="title-1">Projects</h2>
 				<ul className="projects">
-					{projects.map((project, index) => {
-						return (
-							<Project 
-								key={index} 
+					{projects.map((project) => (
+						<li key={project.id}>
+							<Project
 								title={project.title} 
-								img={project.img} 
-								index={index}
+								skills={project.skills} 
+								description={project.description} 
+								gitHubLink={project.gitHubLink}
+								projectLink={project.projectLink}
+								year={project.year}
 							/>
-						);
-					})}
+						</li>
+					))}
 				</ul>
 			</div>
-		</main>
+		</section>
 	);
 }
 

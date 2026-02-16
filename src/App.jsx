@@ -6,21 +6,22 @@ import Projects from "./components/projects/Projects";
 import Contacts from "./components/contacts/Contacts";
 import SkillsSection from "./components/skills-section/SkillsSection";
 import { ThemeProvider } from "./utils/ThemeContext";
-// import ProjectPage from "./pages/ProjectPage";
-// import ScrollToTop from "./utils/scrollToTop";
+import Marquee from "./components/marquee/Marquee";
+import Pattern from "./components/Pattern";
 
 function App() {
 	return (
 		<div className="App">
-			<div id="background__noisy"></div>
-			<div className="gradient-experience__1 "></div>
-			{/* <ScrollToTop /> */}
 			<ThemeProvider>
+				<Pattern />
+				<div id="background__noisy"></div>
+				<div className="gradient-default gradient-main"></div>
 				<Navbar />
-				<Home />
-				<SkillsSection />
-				<Projects />
-				<Contacts />
+				<Home id="home" />
+				<SkillsSection id="skills" />
+				<Projects id="projects" />
+				<Marquee text="React · Javascript · TypeScript · HTML · CSS · NextJS · " />
+				<Contacts id="contacts" />
 				<Footer />
 			</ThemeProvider>
 		</div>

@@ -1,9 +1,9 @@
 import Main from "../components/header/Main";
 
-const Home = () => {
+const Home = ({ id }) => {
 	return (
 		<>
-			<Main />
+			<Main id={id} />
 		</>
 	);
 }

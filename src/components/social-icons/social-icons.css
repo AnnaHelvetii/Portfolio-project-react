@@ -1,0 +1,24 @@
+.social {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+.social__item {
+	cursor: pointer;
+	transition: opacity 0.2s, transform 0.35s cubic-bezier(0.52, 0, 0.27, 2);
+}
+
+.social__item:hover {
+	opacity: 0.8;
+	transform: scale(1.3);
+}
+
+.social__item img {
+	width: 25px;
+}
+
+.btn-social {
+	border-radius: 1rem;
+	border: 1px solid var(--border);
+}

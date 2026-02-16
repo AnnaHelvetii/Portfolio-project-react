@@ -1,9 +1,10 @@
-import gitHubBlack from "../../img/socials-icons/github.light.svg";
-import gitHubWhite from "../../img/socials-icons/github.dark.svg";
 import { useTheme } from "../../utils/ThemeContext";
+import './btn-github.css';
 
-const BtnGitHub = ({ link }) => {
+const BtnGitHub = ({ link, innerText, showIcon = true }) => {
 	const { theme } = useTheme();
+	const gitHubWhite = "/img/socials-icons/dark/github.svg";
+	const gitHubBlack = "/img/socials-icons/light/github.svg";
 
 	const icon = theme === 'dark' ? gitHubWhite : gitHubBlack;
 
@@ -12,10 +13,12 @@ const BtnGitHub = ({ link }) => {
 			href={link}
 			target="_blank"
 			rel="noreferrer"
-			className="btn-outline"
+			className="btn btn-github"
 		>
-			<img src={icon} alt="GitHub" />
-			GitHub repo
+			{showIcon && (
+				<img src={icon} alt="GitHub" />
+			)}
+			{innerText}
 		</a>
 	);
 };

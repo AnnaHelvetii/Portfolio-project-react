@@ -20,11 +20,9 @@ interface SocialsList {
 	href: string;
 };
 
-const socialsList: SocialsList[] = [
+export const socialsList: SocialsList[] = [
 	{ id: 'telegram', title: 'Telegram', icon: 'tg', href: 'https://t.me/anna_helvetii' },
 	{ id: 'vk', title: 'VK', icon: 'vk', href: 'https://vk.com/we_are_helvetios' },
 	{ id: 'instagram', title: 'Instagram', icon: 'instagram', href: 'https://www.instagram.com/anna_helvetii' },
 	{ id: 'githubLink', title: 'GitHub', icon: 'github', href: 'https://github.com/AnnaHelvetii' },
-]
-
-export default socialsList;
+];

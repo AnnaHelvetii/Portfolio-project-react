@@ -1,15 +1,24 @@
-.section {
-	margin: 0;
-}
-
 .projects {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
 	gap: 30px;
 }
 
+.gradient-projects__1 {
+    bottom: 90px;
+    height: 400px;
+    width: 400px;
+    filter: blur(5.5rem);
+    opacity: 0.8;
+    border-radius: 900px;
+    right: -50px;
+}
+
 @media (max-width: 620px) {
+	.projects {
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+
 	.project .project__title {
 		font-size: 20px;
 	}
